@@ -18,14 +18,16 @@
         <?php
         foreach ($lesJeux as $unJeu) {
             $id = $unJeu['id'];
-            $description = $unJeu['description'];
+            $description = $unJeu['descriptions'];
             $prix = $unJeu['prix'];
             $image = $unJeu['image'];
+            $etat = $unJeu['etat_id'];
+            $annee = $unJeu['annee_sortie'];
             ?>
             <article>
                 <img src="public/images/jeux/<?= $image ?>" alt="Image de <?= $description; ?>"/>
                 <p><?= $description ?></p>
-                <p><?= "Prix : " . $prix . " Euros" ?>
+                <p><?= "Prix : " . $prix . " Euros <br> Sortie en " .$annee?>
                     <a href="index.php?uc=visite&categorie=<?= $categorie ?>&jeu=<?= $id ?>&action=ajouterAuPanier">
                         <img src="public/images/mettrepanier.png" title="Ajouter au panier" class="add"/>
                     </a>
