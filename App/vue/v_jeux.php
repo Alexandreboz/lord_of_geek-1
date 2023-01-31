@@ -21,13 +21,16 @@
             $description = $unJeu['descriptions'];
             $prix = $unJeu['prix'];
             $image = $unJeu['image'];
-            $etat = $unJeu['etat_id'];
             $annee = $unJeu['annee_sortie'];
+            $etat = $unJeu['etat_id'];
+            $console = $unJeu['console_id'];
+            $licence = $unJeu['licences_id'];
+            $edition = $unJeu['edition_id'];
             ?>
             <article>
                 <img src="public/images/jeux/<?= $image ?>" alt="Image de <?= $description; ?>"/>
                 <p><?= $description ?></p>
-                <p><?= "Prix : " . $prix . " Euros <br> Sortie en " .$annee?>
+                <p><?= "Prix : " . $prix . " Euros <br> Sortie en " .$annee."<br>".$etat.$console.$licence.$edition?>
                     <a href="index.php?uc=visite&categorie=<?= $categorie ?>&jeu=<?= $id ?>&action=ajouterAuPanier">
                         <img src="public/images/mettrepanier.png" title="Ajouter au panier" class="add"/>
                     </a>

@@ -3,7 +3,7 @@
     <?php
     foreach ($lesJeuxDuPanier as $unJeu) {
         $id = $unJeu['id'];
-        $description = $unJeu['description'];
+        $description = $unJeu['descriptions'];
         $image = $unJeu['image'];
         $prix = $unJeu['prix'];
         ?>

@@ -20,6 +20,30 @@ class M_Exemplaire {
         $lesLignes = $res->fetchAll();
         return $lesLignes;
     }
+    public static function trouveLesJeuxDeConsole($idConsole) {
+        $req = "SELECT * FROM exemplaires WHERE console_id = '$idConsole'";
+        $res = AccesDonnees::query($req);
+        $lesLignes = $res->fetchAll();
+        return $lesLignes;
+    }
+    public static function trouveLesJeuxDeEtat($idEtat) {
+        $req = "SELECT * FROM exemplaires WHERE etat_id = '$idEtat'";
+        $res = AccesDonnees::query($req);
+        $lesLignes = $res->fetchAll();
+        return $lesLignes;
+    }
+    public static function trouveLesJeuxDeEdition($idEdition) {
+        $req = "SELECT * FROM exemplaires WHERE edition_id = '$idEdition'";
+        $res = AccesDonnees::query($req);
+        $lesLignes = $res->fetchAll();
+        return $lesLignes;
+    }
+    public static function trouveLesJeuxDesLicences($idLicences) {
+        $req = "SELECT * FROM exemplaires WHERE licences_id = '$idLicences'";
+        $res = AccesDonnees::query($req);
+        $lesLignes = $res->fetchAll();
+        return $lesLignes;
+    }
 
     /**
      * Retourne les jeux concernés par le tableau des idProduits passée en argument
