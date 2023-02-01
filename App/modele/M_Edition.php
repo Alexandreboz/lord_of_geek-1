@@ -13,7 +13,7 @@ class M_Edition {
      * @return le tableau associatif des catégories
      */
     public static function trouveLesEdition() {
-        $req = "SELECT * FROM 'edition'";
+        $req = "SELECT * FROM editions";
         $res = AccesDonnees::query($req);
         $lesLignes = $res->fetchAll();
         return $lesLignes;

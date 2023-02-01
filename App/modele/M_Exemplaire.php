@@ -15,31 +15,57 @@ class M_Exemplaire {
      * @return un tableau associatif
      */
     public static function trouveLesJeuxDeCategorie($idCategorie) {
-        $req = "SELECT * FROM exemplaires WHERE categorie_id = '$idCategorie'";
+        $req = "SELECT * FROM exemplaires 
+        JOIN etat_jeu ON exemplaires.etat_id = etat_jeu.id
+        join console on exemplaires.console_id = console.id
+        join editions on exemplaires.edition_id = editions.id
+        join licences on exemplaires.licences_id = licences.id
+        join categories on exemplaires.categorie_id = categories.id
+        WHERE categorie_id = '$idCategorie'";
         $res = AccesDonnees::query($req);
         $lesLignes = $res->fetchAll();
         return $lesLignes;
     }
     public static function trouveLesJeuxDeConsole($idConsole) {
-        $req = "SELECT * FROM exemplaires WHERE console_id = '$idConsole'";
+        $req = "SELECT * FROM exemplaires JOIN etat_jeu ON exemplaires.etat_id = etat_jeu.id
+        join console on exemplaires.console_id = console.id
+        join editions on exemplaires.edition_id = editions.id
+        join licences on exemplaires.licences_id = licences.id
+        join categories on exemplaires.categorie_id = categories.id 
+        WHERE console_id = '$idConsole'";
         $res = AccesDonnees::query($req);
         $lesLignes = $res->fetchAll();
         return $lesLignes;
     }
-    public static function trouveLesJeuxDeEtat($idEtat) {
-        $req = "SELECT * FROM exemplaires WHERE etat_id = '$idEtat'";
+    public static function trouveLesEtat($idEtat) {
+        $req = "SELECT * FROM exemplaires JOIN etat_jeu ON exemplaires.etat_id = etat_jeu.id
+        join console on exemplaires.console_id = console.id
+        join editions on exemplaires.edition_id = editions.id
+        join licences on exemplaires.licences_id = licences.id
+        join categories on exemplaires.categorie_id = categories.id 
+        WHERE etat_id = '$idEtat' ";
         $res = AccesDonnees::query($req);
         $lesLignes = $res->fetchAll();
         return $lesLignes;
     }
-    public static function trouveLesJeuxDeEdition($idEdition) {
-        $req = "SELECT * FROM exemplaires WHERE edition_id = '$idEdition'";
+    public static function trouveLesEdition($idEdition) {
+        $req = "SELECT * FROM exemplaires JOIN etat_jeu ON exemplaires.etat_id = etat_jeu.id
+        join console on exemplaires.console_id = console.id
+        join editions on exemplaires.edition_id = editions.id
+        join licences on exemplaires.licences_id = licences.id
+        join categories on exemplaires.categorie_id = categories.id
+        WHERE edition_id = '$idEdition'";
         $res = AccesDonnees::query($req);
         $lesLignes = $res->fetchAll();
         return $lesLignes;
     }
-    public static function trouveLesJeuxDesLicences($idLicences) {
-        $req = "SELECT * FROM exemplaires WHERE licences_id = '$idLicences'";
+    public static function trouveLesLicences($idLicences) {
+        $req = "SELECT * FROM exemplaires JOIN etat_jeu ON exemplaires.etat_id = etat_jeu.id
+        join console on exemplaires.console_id = console.id
+        join editions on exemplaires.edition_id = editions.id
+        join licences on exemplaires.licences_id = licences.id
+        join categories on exemplaires.categorie_id = categories.id
+        WHERE licences_id = '$idLicences'";
         $res = AccesDonnees::query($req);
         $lesLignes = $res->fetchAll();
         return $lesLignes;

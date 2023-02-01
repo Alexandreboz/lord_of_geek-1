@@ -13,10 +13,11 @@ class M_Etat {
      * @return le tableau associatif des catégories
      */
     public static function trouveLesEtat() {
-        $req = "SELECT * FROM etat";
+        $req = "SELECT * FROM etat_jeu";
         $res = AccesDonnees::query($req);
         $lesLignes = $res->fetchAll();
         return $lesLignes;
     }
 
 }
+
