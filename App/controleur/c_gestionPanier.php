@@ -1,12 +1,13 @@
 ﻿<?php
 include 'App/modele/M_exemplaire.php';
+include 'App/modele/M_categorie.php';
 /**
  * Controleur pour la gestion du panier
  * @author Loic LOG
  */
 switch ($action) {
     case 'supprimerUnJeu':
-        $idJeu = filter_input(INPUT_GET, 'jeu');
+        $idJeu = filter_input(INPUT_GET, 'exemplaires');
         retirerDuPanier($idJeu);
     case 'voirPanier':
         $n = nbJeuxDuPanier();
@@ -19,6 +20,4 @@ switch ($action) {
         }
         break;
 }
-
-
-
+$lesCategories = M_Categorie::trouveLesCategories();

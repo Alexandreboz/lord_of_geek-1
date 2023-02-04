@@ -5,8 +5,8 @@
  *
  * @author Loic LOG
  */
-class M_Exemplaire {
-
+class M_Exemplaire
+{
     /**
      * Retourne sous forme d'un tableau associatif tous les jeux de la
      * catégorie passée en argument
@@ -14,7 +14,8 @@ class M_Exemplaire {
      * @param $idCategorie
      * @return un tableau associatif
      */
-    public static function trouveLesJeuxDeCategorie($idCategorie) {
+    public static function trouveLesJeuxDeCategorie($idCategorie)
+    {
         $req = "SELECT * FROM exemplaires 
         JOIN etat_jeu ON exemplaires.etat_id = etat_jeu.id
         join console on exemplaires.console_id = console.id
@@ -26,8 +27,10 @@ class M_Exemplaire {
         $lesLignes = $res->fetchAll();
         return $lesLignes;
     }
-    public static function trouveLesJeuxDeConsole($idConsole) {
-        $req = "SELECT * FROM exemplaires JOIN etat_jeu ON exemplaires.etat_id = etat_jeu.id
+    public static function trouveLesJeuxDeConsole($idConsole)
+    {
+        $req = "SELECT * FROM exemplaires 
+        JOIN etat_jeu ON exemplaires.etat_id = etat_jeu.id
         join console on exemplaires.console_id = console.id
         join editions on exemplaires.edition_id = editions.id
         join licences on exemplaires.licences_id = licences.id
@@ -37,8 +40,10 @@ class M_Exemplaire {
         $lesLignes = $res->fetchAll();
         return $lesLignes;
     }
-    public static function trouveLesEtat($idEtat) {
-        $req = "SELECT * FROM exemplaires JOIN etat_jeu ON exemplaires.etat_id = etat_jeu.id
+    public static function trouveLesEtat($idEtat)
+    {
+        $req = "SELECT * FROM exemplaires 
+        JOIN etat_jeu ON exemplaires.etat_id = etat_jeu.id
         join console on exemplaires.console_id = console.id
         join editions on exemplaires.edition_id = editions.id
         join licences on exemplaires.licences_id = licences.id
@@ -48,8 +53,10 @@ class M_Exemplaire {
         $lesLignes = $res->fetchAll();
         return $lesLignes;
     }
-    public static function trouveLesEdition($idEdition) {
-        $req = "SELECT * FROM exemplaires JOIN etat_jeu ON exemplaires.etat_id = etat_jeu.id
+    public static function trouveLesEdition($idEdition)
+    {
+        $req = "SELECT * FROM exemplaires 
+        JOIN etat_jeu ON exemplaires.etat_id = etat_jeu.id
         join console on exemplaires.console_id = console.id
         join editions on exemplaires.edition_id = editions.id
         join licences on exemplaires.licences_id = licences.id
@@ -59,8 +66,10 @@ class M_Exemplaire {
         $lesLignes = $res->fetchAll();
         return $lesLignes;
     }
-    public static function trouveLesLicences($idLicences) {
-        $req = "SELECT * FROM exemplaires JOIN etat_jeu ON exemplaires.etat_id = etat_jeu.id
+    public static function trouveLesLicences($idLicences)
+    {
+        $req = "SELECT * FROM exemplaires 
+        JOIN etat_jeu ON exemplaires.etat_id = etat_jeu.id
         join console on exemplaires.console_id = console.id
         join editions on exemplaires.edition_id = editions.id
         join licences on exemplaires.licences_id = licences.id
@@ -77,7 +86,8 @@ class M_Exemplaire {
      * @param $desIdJeux tableau d'idProduits
      * @return un tableau associatif
      */
-    public static function trouveLesJeuxDuTableau($desIdJeux) {
+    public static function trouveLesJeuxDuTableau($desIdJeux)
+    {
         $nbProduits = count($desIdJeux);
         $lesProduits = array();
         if ($nbProduits != 0) {
@@ -90,5 +100,4 @@ class M_Exemplaire {
         }
         return $lesProduits;
     }
-
 }

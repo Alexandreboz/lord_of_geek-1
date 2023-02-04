@@ -1,6 +1,6 @@
 ﻿<?php
-include 'App/modele/M_categorie.php';
 include 'App/modele/M_exemplaire.php';
+include 'App/modele/M_categorie.php';
 include 'App/modele/M_Etat.php';
 include 'App/modele/M_Console.php';
 include 'App/modele/M_Licences.php';
@@ -30,7 +30,7 @@ switch ($action) {
     case 'voirEdition':
         $edition = filter_input(INPUT_GET, 'editions');
         $lesJeux = M_Exemplaire::trouveLesEdition($edition);
-        break;
+        break; 
     case 'ajouterAuPanier':
         $idJeu = filter_input(INPUT_GET, 'jeu');
         $categorie = filter_input(INPUT_GET, 'categorie');
