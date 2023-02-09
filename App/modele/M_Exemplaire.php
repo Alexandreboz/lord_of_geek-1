@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Requetes sur les exemplaires  de jeux videos
  *
@@ -79,7 +78,6 @@ class M_Exemplaire
         $lesLignes = $res->fetchAll();
         return $lesLignes;
     }
-
     /**
      * Retourne les jeux concernés par le tableau des idProduits passée en argument
      *
