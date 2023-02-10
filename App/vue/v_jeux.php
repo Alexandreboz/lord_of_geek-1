@@ -53,6 +53,7 @@
     <section id="jeux">
         <?php
         foreach ($lesJeux as $unJeu) {
+        
             $id = $unJeu['id'];
             $description = $unJeu['descriptions'];
             $prix = $unJeu['prix'];

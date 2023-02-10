@@ -37,6 +37,7 @@ class AccesDonnees {
         if (AccesDonnees::$monPdo == null) {
             AccesDonnees::$monPdo = new PDO(AccesDonnees::$serveur . ';' . AccesDonnees::$bdd, AccesDonnees::$user, AccesDonnees::$mdp);
             AccesDonnees::$monPdo->query("SET CHARACTER SET utf8");
+            
         }
         return AccesDonnees::$monPdo;
     }

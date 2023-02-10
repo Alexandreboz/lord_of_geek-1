@@ -11,6 +11,7 @@ switch ($action) {
         retirerDuPanier($idJeu);
     case 'voirPanier':
         $n = nbJeuxDuPanier();
+
         if ($n > 0) {
             $desIdJeu = getLesIdJeuxDuPanier();
             $lesJeuxDuPanier = M_Exemplaire::trouveLesJeuxDuTableau($desIdJeu);
