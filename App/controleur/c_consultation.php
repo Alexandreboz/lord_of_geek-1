@@ -32,7 +32,7 @@ switch ($action) {
         $lesJeux = M_Exemplaire::trouveLesEdition($edition);
         break; 
     case 'ajouterAuPanier':
-        $idJeu = filter_input(INPUT_GET, 'jeu');
+        $idJeu = filter_input(INPUT_GET, 'exemplaires');
         $categorie = filter_input(INPUT_GET, 'categorie');
         if (!ajouterAuPanier($idJeu)) {
             afficheErreurs(["Ce jeu est déjà dans le panier !!"]);

@@ -106,12 +106,8 @@ class M_Exemplaire
         $lesProduits = array();
         if ($nbProduits != 0) {
             foreach ($desIdJeux as $unIdProduit) {
-                $req = "SELECT * FROM exemplaires 
-                JOIN etat_jeu ON exemplaires.etat_id = etat_jeu.id
-                join console on exemplaires.console_id = console.id
-                join editions on exemplaires.edition_id = editions.id
-                join licences on exemplaires.licences_id = licences.id
-                join categories on exemplaires.categorie_id = categories.id
+                $req = "SELECT exemplaires.*
+                FROM exemplaires 
                 WHERE exemplaires.id = :unIdProduit";
                 $pdo = AccesDonnees::getPdo();
                 $stmt = $pdo->prepare($req);
